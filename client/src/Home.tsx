@@ -49,7 +49,7 @@ const Home = observer(() => {
   const [dragging, setDrag] = useState(false);
   const disabled =
     !eth.isInstalled ||
-    !(eth.network === "rinkeby" || eth.network === "unknown network");
+    !(eth.network === "sepolia" || eth.network === "unknown network");
 
   const onDrop = useCallback(files => {
     setEmail(null);
