@@ -18,18 +18,10 @@ const Model = types
         return "mainnet";
       } else if (self.networkId === 2) {
         return "morden";
-      } else if (self.networkId === 3) {
-        return "ropsten";
-      } else if (self.networkId === 4) {
-        return "rinkeby";
-      } else if (self.networkId === 5) {
-        return "goerli";
-      } else if (self.networkId === 42) {
-        return "kovan";
-      } else if (self.networkId === 1337) {
-        return "geth private";
+      } else if (self.networkId === 11155111) {
+        return "sepolia";
       }
-
+      
       return "unknown network";
     }
   }))

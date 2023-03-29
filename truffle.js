@@ -1,4 +1,8 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
+const PrivateKeyProvider = require("truffle-privatekey-provider");
+
+const PRIVATE_KEY = 'N/A'
+const ALCHEMY_KEY = 'N/A'
 
 module.exports = {
   networks: {
@@ -7,15 +11,10 @@ module.exports = {
       port: 8545,
       network_id: "*" // Match any network id
     },
-    rinkeby: {
-      provider: function() {
-        return new HDWalletProvider(
-          require("./mnemonic.json"),
-          `https://rinkeby.infura.io/v3/${require("./infura.json")}`
-        );
-      },
+    sepolia: {
+      provider: () => new PrivateKeyProvider(PRIVATE_KEY, 'https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_KEY}'),
       gasPrice: 1e9,
-      network_id: 4
+      network_id: 11155111
     }
   },
   solc: {

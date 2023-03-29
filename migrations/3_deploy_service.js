@@ -3,7 +3,7 @@ const RSASHA256 = artifacts.require("./RSASHA256.sol");
 const Service = artifacts.require("./Service.sol");
 
 module.exports = function(deployer, network, accounts) {
-  const oracleAddress = accounts[1]; // temporary oracle address
+  const oracleAddress = accounts[0]; // temporary oracle address
 
   deployer.deploy(RSASHA1);
   deployer.deploy(RSASHA256);
