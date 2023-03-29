@@ -1,0 +1,726 @@
+{
+  "contractName": "RSAVerify",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/algorithms/RSAVerify.sol\":\"RSAVerify\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/algorithms/ModexpPrecompile.sol\":{\"keccak256\":\"0x0d4e3788b3fb0e8df5069ebfc17d410f39d179858f49f308ab82756664a887f2\",\"urls\":[\"bzz-raw://98d2a18d207a30d5d67d286ffc44ae8d864b74e03154643bdcd14bc177a29236\",\"dweb:/ipfs/QmQv2ncqmQBzABXpz3hbBsduK89XrKWHMMcjaedTs8Bzfo\"]},\"project:/contracts/algorithms/RSAVerify.sol\":{\"keccak256\":\"0xb773197f65d28e79e7cd4384f3e0fe7012101ccdc29acf061dd6b1490f48c532\",\"urls\":[\"bzz-raw://d56906bc82d7ded79289461fee476428c79648aaa3e8f6023bce66b033feeee0\",\"dweb:/ipfs/QmPZYwXFdV3B3KwMrAe7AcdDf8f2Zmhi8eWoe1UnsEHRMo\"]},\"project:/contracts/utils/Buffer.sol\":{\"keccak256\":\"0x85e72705ea0a2d45e7f8ca06317d6e25576a5f05b49303582a51bc27d1cb8d08\",\"urls\":[\"bzz-raw://e1ef1a1b26725bee95b516880afc7f0c77b7c226915fc953db205232458960bd\",\"dweb:/ipfs/QmUGbxpdcXMWuptWEvHvkJFjuuUaBsbVpHQSiHJh9FTHJM\"]},\"project:/contracts/utils/Bytes.sol\":{\"keccak256\":\"0xa175cd5ca61d1196d953b5c0f259695e5b9fdc0f59796d564d9ab458bd7cb517\",\"urls\":[\"bzz-raw://bbbb2c97243a027368e5e36ae2b2a786a3823fa786012437fc47bd7960c6cc87\",\"dweb:/ipfs/QmTWcmNjQe7GUmgZEGBeKK6Gu6bQW7zQCq9CEPrRhf7GPd\"]}},\"version\":1}",
+  "bytecode": "0x60556023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a723158203fa1f092af8633d7b11d7c07509e963bb67b6d01150d8d9477be2b4a2b8b345764736f6c63430005100032",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a723158203fa1f092af8633d7b11d7c07509e963bb67b6d01150d8d9477be2b4a2b8b345764736f6c63430005100032",
+  "sourceMap": "89:459:5:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
+  "deployedSourceMap": "89:459:5:-;;;;;;;;",
+  "source": "pragma solidity >0.4.23;\n\nimport \"../utils/Bytes.sol\";\nimport \"./ModexpPrecompile.sol\";\n\nlibrary RSAVerify {\n    /**\n    * @dev Recovers the input data from an RSA signature, returning the result in S.\n    * @param N The RSA public modulus.\n    * @param E The RSA public exponent.\n    * @param S The signature to recover.\n    * @return True if the recovery succeeded.\n    */\n    function rsarecover(bytes memory N, bytes memory E, bytes memory S) internal view returns (bool, bytes memory) {\n        return ModexpPrecompile.modexp(S, E, N);\n    }\n}\n",
+  "sourcePath": "/home/estojnovsky/Dev/Ambire/dkmi/solidity-dkim/contracts/algorithms/RSAVerify.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/algorithms/RSAVerify.sol",
+    "exportedSymbols": {
+      "RSAVerify": [
+        456
+      ]
+    },
+    "id": 457,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 432,
+        "literals": [
+          "solidity",
+          ">",
+          "0.4",
+          ".23"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:5"
+      },
+      {
+        "absolutePath": "project:/contracts/utils/Bytes.sol",
+        "file": "../utils/Bytes.sol",
+        "id": 433,
+        "nodeType": "ImportDirective",
+        "scope": 457,
+        "sourceUnit": 1632,
+        "src": "26:28:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/algorithms/ModexpPrecompile.sol",
+        "file": "./ModexpPrecompile.sol",
+        "id": 434,
+        "nodeType": "ImportDirective",
+        "scope": 457,
+        "sourceUnit": 331,
+        "src": "55:32:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 456,
+        "linearizedBaseContracts": [
+          456
+        ],
+        "name": "RSAVerify",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 454,
+              "nodeType": "Block",
+              "src": "490:56:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 449,
+                        "name": "S",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 440,
+                        "src": "531:1:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 450,
+                        "name": "E",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 438,
+                        "src": "534:1:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 451,
+                        "name": "N",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 436,
+                        "src": "537:1:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 447,
+                        "name": "ModexpPrecompile",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 330,
+                        "src": "507:16:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ModexpPrecompile_$330_$",
+                          "typeString": "type(library ModexpPrecompile)"
+                        }
+                      },
+                      "id": 448,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "modexp",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 329,
+                      "src": "507:23:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
+                        "typeString": "function (bytes memory,bytes memory,bytes memory) view returns (bool,bytes memory)"
+                      }
+                    },
+                    "id": 452,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "507:32:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
+                      "typeString": "tuple(bool,bytes memory)"
+                    }
+                  },
+                  "functionReturnParameters": 446,
+                  "id": 453,
+                  "nodeType": "Return",
+                  "src": "500:39:5"
+                }
+              ]
+            },
+            "documentation": "@dev Recovers the input data from an RSA signature, returning the result in S.\n@param N The RSA public modulus.\n@param E The RSA public exponent.\n@param S The signature to recover.\n@return True if the recovery succeeded.",
+            "id": 455,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "rsarecover",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 441,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 436,
+                  "name": "N",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 455,
+                  "src": "399:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 435,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "399:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 438,
+                  "name": "E",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 455,
+                  "src": "415:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 437,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "415:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 440,
+                  "name": "S",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 455,
+                  "src": "431:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 439,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "431:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "398:48:5"
+            },
+            "returnParameters": {
+              "id": 446,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 443,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 455,
+                  "src": "470:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 442,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "470:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 445,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 455,
+                  "src": "476:12:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 444,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "476:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "469:20:5"
+            },
+            "scope": 456,
+            "src": "379:167:5",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 457,
+        "src": "89:459:5"
+      }
+    ],
+    "src": "0:549:5"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/algorithms/RSAVerify.sol",
+      "exportedSymbols": {
+        "RSAVerify": [
+          456
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">",
+            "0.4",
+            ".23"
+          ]
+        },
+        "id": 432,
+        "name": "PragmaDirective",
+        "src": "0:24:5"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1632,
+          "absolutePath": "project:/contracts/utils/Bytes.sol",
+          "file": "../utils/Bytes.sol",
+          "scope": 457,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 433,
+        "name": "ImportDirective",
+        "src": "26:28:5"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 331,
+          "absolutePath": "project:/contracts/algorithms/ModexpPrecompile.sol",
+          "file": "./ModexpPrecompile.sol",
+          "scope": 457,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 434,
+        "name": "ImportDirective",
+        "src": "55:32:5"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "library",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            456
+          ],
+          "name": "RSAVerify",
+          "scope": 457
+        },
+        "children": [
+          {
+            "attributes": {
+              "documentation": "@dev Recovers the input data from an RSA signature, returning the result in S.\n@param N The RSA public modulus.\n@param E The RSA public exponent.\n@param S The signature to recover.\n@return True if the recovery succeeded.",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "rsarecover",
+              "scope": 456,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "N",
+                      "scope": 455,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 435,
+                        "name": "ElementaryTypeName",
+                        "src": "399:5:5"
+                      }
+                    ],
+                    "id": 436,
+                    "name": "VariableDeclaration",
+                    "src": "399:14:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "E",
+                      "scope": 455,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 437,
+                        "name": "ElementaryTypeName",
+                        "src": "415:5:5"
+                      }
+                    ],
+                    "id": 438,
+                    "name": "VariableDeclaration",
+                    "src": "415:14:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "S",
+                      "scope": 455,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 439,
+                        "name": "ElementaryTypeName",
+                        "src": "431:5:5"
+                      }
+                    ],
+                    "id": 440,
+                    "name": "VariableDeclaration",
+                    "src": "431:14:5"
+                  }
+                ],
+                "id": 441,
+                "name": "ParameterList",
+                "src": "398:48:5"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 455,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 442,
+                        "name": "ElementaryTypeName",
+                        "src": "470:4:5"
+                      }
+                    ],
+                    "id": 443,
+                    "name": "VariableDeclaration",
+                    "src": "470:4:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 455,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 444,
+                        "name": "ElementaryTypeName",
+                        "src": "476:5:5"
+                      }
+                    ],
+                    "id": 445,
+                    "name": "VariableDeclaration",
+                    "src": "476:12:5"
+                  }
+                ],
+                "id": 446,
+                "name": "ParameterList",
+                "src": "469:20:5"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 446
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple(bool,bytes memory)",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes_memory_ptr",
+                                  "typeString": "bytes memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_bytes_memory_ptr",
+                                  "typeString": "bytes memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_bytes_memory_ptr",
+                                  "typeString": "bytes memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "modexp",
+                              "referencedDeclaration": 329,
+                              "type": "function (bytes memory,bytes memory,bytes memory) view returns (bool,bytes memory)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 330,
+                                  "type": "type(library ModexpPrecompile)",
+                                  "value": "ModexpPrecompile"
+                                },
+                                "id": 447,
+                                "name": "Identifier",
+                                "src": "507:16:5"
+                              }
+                            ],
+                            "id": 448,
+                            "name": "MemberAccess",
+                            "src": "507:23:5"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 440,
+                              "type": "bytes memory",
+                              "value": "S"
+                            },
+                            "id": 449,
+                            "name": "Identifier",
+                            "src": "531:1:5"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 438,
+                              "type": "bytes memory",
+                              "value": "E"
+                            },
+                            "id": 450,
+                            "name": "Identifier",
+                            "src": "534:1:5"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 436,
+                              "type": "bytes memory",
+                              "value": "N"
+                            },
+                            "id": 451,
+                            "name": "Identifier",
+                            "src": "537:1:5"
+                          }
+                        ],
+                        "id": 452,
+                        "name": "FunctionCall",
+                        "src": "507:32:5"
+                      }
+                    ],
+                    "id": 453,
+                    "name": "Return",
+                    "src": "500:39:5"
+                  }
+                ],
+                "id": 454,
+                "name": "Block",
+                "src": "490:56:5"
+              }
+            ],
+            "id": 455,
+            "name": "FunctionDefinition",
+            "src": "379:167:5"
+          }
+        ],
+        "id": 456,
+        "name": "ContractDefinition",
+        "src": "89:459:5"
+      }
+    ],
+    "id": 457,
+    "name": "SourceUnit",
+    "src": "0:549:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2023-03-29T15:38:56.838Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

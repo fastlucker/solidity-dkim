@@ -1,0 +1,490 @@
+{
+  "contractName": "Algorithm",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "exponent",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "modulus",
+          "type": "bytes"
+        }
+      ],
+      "name": "verify",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"hash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"exponent\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"modulus\",\"type\":\"bytes\"}],\"name\":\"verify\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"An interface for contracts implementing a signing algorithm.\",\"methods\":{\"verify(bytes32,bytes,bytes,bytes)\":{\"details\":\"Verifies a signature.\",\"params\":{\"exponent\":\"The exponent of a public key.\",\"hash\":\"The hash of data that needs to be verified.\",\"modulus\":\"The modulus of a public key.\",\"signature\":\"The signature to verify.\"},\"return\":\"True if the signature is valid.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/algorithms/Algorithm.sol\":\"Algorithm\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/algorithms/Algorithm.sol\":{\"keccak256\":\"0xe7675d2f874d1408c24bb8f2886a45f064c6bdfceddb9ae33bfa3acb240615cc\",\"urls\":[\"bzz-raw://ae1a5a0410839acc7c7415ebc3492b4f280754feb8391a0cc63219de717621b1\",\"dweb:/ipfs/QmWdtTty6NHyJsLgFmTr1MLqJrTUb2YiGHovUDcd2JPef1\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >0.4.23;\n\n/**\n* @dev An interface for contracts implementing a signing algorithm.\n*/\ninterface Algorithm {\n    /**\n    * @dev Verifies a signature.\n    * @param hash The hash of data that needs to be verified.\n    * @param signature The signature to verify.\n    * @param exponent The exponent of a public key.\n    * @param modulus The modulus of a public key.\n    * @return True if the signature is valid.\n    */\n    function verify(\n        bytes32 hash,\n        bytes calldata signature,\n        bytes calldata exponent,\n        bytes calldata modulus\n    ) external view returns (bool);\n}\n",
+  "sourcePath": "/home/estojnovsky/Dev/Ambire/dkmi/solidity-dkim/contracts/algorithms/Algorithm.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/algorithms/Algorithm.sol",
+    "exportedSymbols": {
+      "Algorithm": [
+        773
+      ]
+    },
+    "id": 774,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 759,
+        "literals": [
+          "solidity",
+          ">",
+          "0.4",
+          ".23"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@dev An interface for contracts implementing a signing algorithm.",
+        "fullyImplemented": false,
+        "id": 773,
+        "linearizedBaseContracts": [
+          773
+        ],
+        "name": "Algorithm",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@dev Verifies a signature.\n@param hash The hash of data that needs to be verified.\n@param signature The signature to verify.\n@param exponent The exponent of a public key.\n@param modulus The modulus of a public key.\n@return True if the signature is valid.",
+            "id": 772,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 768,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 761,
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 772,
+                  "src": "458:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 760,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "458:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 763,
+                  "name": "signature",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 772,
+                  "src": "480:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 762,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "480:5:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 765,
+                  "name": "exponent",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 772,
+                  "src": "514:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 764,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "514:5:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 767,
+                  "name": "modulus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 772,
+                  "src": "547:22:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 766,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "547:5:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "448:127:4"
+            },
+            "returnParameters": {
+              "id": 771,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 770,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 772,
+                  "src": "599:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 769,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "599:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "598:6:4"
+            },
+            "scope": 773,
+            "src": "433:172:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 774,
+        "src": "101:506:4"
+      }
+    ],
+    "src": "0:608:4"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/algorithms/Algorithm.sol",
+      "exportedSymbols": {
+        "Algorithm": [
+          773
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">",
+            "0.4",
+            ".23"
+          ]
+        },
+        "id": 759,
+        "name": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": "@dev An interface for contracts implementing a signing algorithm.",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            773
+          ],
+          "name": "Algorithm",
+          "scope": 774
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "@dev Verifies a signature.\n@param hash The hash of data that needs to be verified.\n@param signature The signature to verify.\n@param exponent The exponent of a public key.\n@param modulus The modulus of a public key.\n@return True if the signature is valid.",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "verify",
+              "scope": 773,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "hash",
+                      "scope": 772,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 760,
+                        "name": "ElementaryTypeName",
+                        "src": "458:7:4"
+                      }
+                    ],
+                    "id": 761,
+                    "name": "VariableDeclaration",
+                    "src": "458:12:4"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "signature",
+                      "scope": 772,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 762,
+                        "name": "ElementaryTypeName",
+                        "src": "480:5:4"
+                      }
+                    ],
+                    "id": 763,
+                    "name": "VariableDeclaration",
+                    "src": "480:24:4"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "exponent",
+                      "scope": 772,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 764,
+                        "name": "ElementaryTypeName",
+                        "src": "514:5:4"
+                      }
+                    ],
+                    "id": 765,
+                    "name": "VariableDeclaration",
+                    "src": "514:23:4"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "modulus",
+                      "scope": 772,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 766,
+                        "name": "ElementaryTypeName",
+                        "src": "547:5:4"
+                      }
+                    ],
+                    "id": 767,
+                    "name": "VariableDeclaration",
+                    "src": "547:22:4"
+                  }
+                ],
+                "id": 768,
+                "name": "ParameterList",
+                "src": "448:127:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 772,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 769,
+                        "name": "ElementaryTypeName",
+                        "src": "599:4:4"
+                      }
+                    ],
+                    "id": 770,
+                    "name": "VariableDeclaration",
+                    "src": "599:4:4"
+                  }
+                ],
+                "id": 771,
+                "name": "ParameterList",
+                "src": "598:6:4"
+              }
+            ],
+            "id": 772,
+            "name": "FunctionDefinition",
+            "src": "433:172:4"
+          }
+        ],
+        "id": 773,
+        "name": "ContractDefinition",
+        "src": "101:506:4"
+      }
+    ],
+    "id": 774,
+    "name": "SourceUnit",
+    "src": "0:608:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-03-29T11:42:49.268Z",
+  "devdoc": {
+    "details": "An interface for contracts implementing a signing algorithm.",
+    "methods": {
+      "verify(bytes32,bytes,bytes,bytes)": {
+        "details": "Verifies a signature.",
+        "params": {
+          "exponent": "The exponent of a public key.",
+          "hash": "The hash of data that needs to be verified.",
+          "modulus": "The modulus of a public key.",
+          "signature": "The signature to verify."
+        },
+        "return": "True if the signature is valid."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
