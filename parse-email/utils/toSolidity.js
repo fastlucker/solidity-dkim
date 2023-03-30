@@ -4,6 +4,7 @@ const algorithms = {
 };
 
 const toSolidity = rawData => ({
+  ...rawData,
   algorithm: algorithms[rawData.algorithm.replace("-", "")],
   hash: "0x" + rawData.hash.toString("hex"),
   signature: "0x" + rawData.signature.toString("hex"),

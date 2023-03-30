@@ -19,7 +19,8 @@ const verify = (email: string): Promise<any> => {
         hash: dkim.hash,
         signature: dkim.signature.signature,
         exponent: dkim.exponent,
-        modulus: dkim.modulus
+        modulus: dkim.modulus,
+        signatureData: dkim.signature
       });
     });
 
@@ -33,7 +34,8 @@ const verify = (email: string): Promise<any> => {
           dkim.modulus
         ).then(res => ({
           name: dkims[i].entry.name,
-          verified: res["0"]
+          verified: res["0"],
+          signatureData: dkim.signatureData
         }));
       })
     ).catch(reject);
@@ -138,9 +140,25 @@ const Home = observer(() => {
       ) : verified.length > 0 ? (
         verified.map(result =>
           result.verified ? (
-            <h1 key={result.name} className="verified">
-              {result.name}: verified! 🎉
-            </h1>
+            <div className="verified__wrapper">
+              <h1 key={result.name} className="verified">
+                {result.name}: verified! 🎉
+              </h1>
+              <p className="verified__signature">
+                <b>Signature:</b> {result.signatureData.signature}
+              </p>
+              <p>
+                <b>Domain:</b> {result.signatureData && result.signatureData.domain}
+              </p>
+              <p>
+              <b>Expires:</b> {result.signatureData && new Date (Number(result.signatureData.expires + 1000)).toLocaleString('en-US', {
+                  weekday: 'long',
+                  day: 'numeric', 
+                  month: "2-digit", 
+                  year: "numeric"
+                })}
+              </p>
+            </div>
           ) : (
             <h1 key={result.name} className="not-verified">
               {result.name}: not verified 😔
@@ -152,29 +170,25 @@ const Home = observer(() => {
       )}
 
       <style jsx global>{`
-        body {
-          margin: 0;
-          padding: 0;
-          font-family: sans-serif;
-          color: #003c7d;
+        html {
+          background: aliceblue;
         }
-      `}</style>
+       
+        `}</style>
 
       <style jsx>{`
         .container {
+          height: 100%;
+          box-sizing: border-box;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: flex-start;
-          width: 100vw;
-          height: 100vh;
-          background: aliceblue;
+          margin-bottom: 20px;
         }
         h2 {
           margin-top: 100px;
           margin-bottom: 30px;
-        }
-        h1 {
         }
         button {
           height: 30px;
@@ -190,6 +204,19 @@ const Home = observer(() => {
         }
         .error {
           color: #d60000;
+        }
+        .verified__wrapper {
+          margin-top: 50px;
+          max-width: 50%;
+          padding: 5px;
+          border: 1px solid rgb(56, 127, 199);
+          border-radius: 5px;
+        }
+        .verified__wrapper h1 {
+          margin-bottom: 0;
+        }
+        .verified__signature {
+          word-break: break-all;
         }
         .verified {
           color: #00bb39;
