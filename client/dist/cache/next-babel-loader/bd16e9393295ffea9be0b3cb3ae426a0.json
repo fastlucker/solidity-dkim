@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var isSSR = false;","map":{"version":3,"sources":["/home/estojnovsky/Dev/Ambire/dkmi/solidity-dkim/client/src/utils.ts"],"names":["isSSR"],"mappings":"AAAA,OAAO,IAAMA,KAAK,QAAX","sourcesContent":["export const isSSR = typeof window === \"undefined\";\n"]},"metadata":{},"sourceType":"module"}

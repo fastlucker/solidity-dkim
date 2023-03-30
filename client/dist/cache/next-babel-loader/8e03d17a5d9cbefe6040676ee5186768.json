@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Home from \"../src/Home\";\nexport default Home;","map":{"version":3,"sources":["/home/estojnovsky/Dev/Ambire/dkmi/solidity-dkim/client/pages/index.tsx"],"names":["Home"],"mappings":"AAAA,OAAOA,IAAP,MAAiB,aAAjB;AAEA,eAAeA,IAAf","sourcesContent":["import Home from \"../src/Home\";\r\n\r\nexport default Home;\r\n"]},"metadata":{},"sourceType":"module"}

@@ -1,0 +1,90 @@
+{
+  "./Algorithm.json": [
+    {
+      "id": "../build/contracts/Algorithm.json",
+      "name": "../build/contracts/Algorithm.json",
+      "file": "static/chunks/1.js",
+      "publicPath": "static/chunks/1.js"
+    }
+  ],
+  "./Buffer.json": [
+    {
+      "id": "../build/contracts/Buffer.json",
+      "name": "../build/contracts/Buffer.json",
+      "file": "static/chunks/2.js",
+      "publicPath": "static/chunks/2.js"
+    }
+  ],
+  "./BytesUtils.json": [
+    {
+      "id": "../build/contracts/BytesUtils.json",
+      "name": "../build/contracts/BytesUtils.json",
+      "file": "static/chunks/3.js",
+      "publicPath": "static/chunks/3.js"
+    }
+  ],
+  "./DKIM.json": [
+    {
+      "id": "../build/contracts/DKIM.json",
+      "name": "../build/contracts/DKIM.json",
+      "file": "static/chunks/4.js",
+      "publicPath": "static/chunks/4.js"
+    }
+  ],
+  "./Migrations.json": [
+    {
+      "id": "../build/contracts/Migrations.json",
+      "name": "../build/contracts/Migrations.json",
+      "file": "static/chunks/5.js",
+      "publicPath": "static/chunks/5.js"
+    }
+  ],
+  "./ModexpPrecompile.json": [
+    {
+      "id": "../build/contracts/ModexpPrecompile.json",
+      "name": "../build/contracts/ModexpPrecompile.json",
+      "file": "static/chunks/6.js",
+      "publicPath": "static/chunks/6.js"
+    }
+  ],
+  "./RSASHA1.json": [
+    {
+      "id": "../build/contracts/RSASHA1.json",
+      "name": "../build/contracts/RSASHA1.json",
+      "file": "static/chunks/7.js",
+      "publicPath": "static/chunks/7.js"
+    }
+  ],
+  "./RSASHA256.json": [
+    {
+      "id": "../build/contracts/RSASHA256.json",
+      "name": "../build/contracts/RSASHA256.json",
+      "file": "static/chunks/8.js",
+      "publicPath": "static/chunks/8.js"
+    }
+  ],
+  "./RSAVerify.json": [
+    {
+      "id": "../build/contracts/RSAVerify.json",
+      "name": "../build/contracts/RSAVerify.json",
+      "file": "static/chunks/9.js",
+      "publicPath": "static/chunks/9.js"
+    }
+  ],
+  "./Service.json": [
+    {
+      "id": "../build/contracts/Service.json",
+      "name": "../build/contracts/Service.json",
+      "file": "static/chunks/10.js",
+      "publicPath": "static/chunks/10.js"
+    }
+  ],
+  "./dev/noop": [
+    {
+      "id": "./node_modules/next/dist/client/dev/noop.js",
+      "name": "./node_modules/next/dist/client/dev/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
+    }
+  ]
+}
