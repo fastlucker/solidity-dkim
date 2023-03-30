@@ -1,0 +1,52 @@
+Arguments: 
+  /usr/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /home/estojnovsky/.local/share/pnpm:/home/estojnovsky/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/estojnovsky/.cargo/bin:/home/estojnovsky/.local/bin:/home/estojnovsky/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.18.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/home/estojnovsky/Dev/Ambire/dkmi/solidity-dkim/node_modules/@apollo'
+
+npm manifest: 
+  {
+    "name": "solidity-dkim",
+    "version": "1.0.0",
+    "description": "Verify DKIM signatures in solidity.",
+    "scripts": {
+      "compile": "truffle compile",
+      "dev": "truffle develop",
+      "test": "truffle test",
+      "migrate": "truffle migrate"
+    },
+    "license": "MIT",
+    "dependencies": {
+      "@ensdomains/buffer": "0.0.10",
+      "dkim": "^0.7.0",
+      "dkim-key": "^1.3.0",
+      "dkim-signature": "^1.3.0",
+      "jshashes": "^1.0.7",
+      "node-rsa": "^1.0.6"
+    },
+    "devDependencies": {
+      "@truffle/hdwallet-provider": "^1.0.24",
+      "chai": "^4.2.0",
+      "eth-gas-reporter": "^0.2.12",
+      "openzeppelin-test-helpers": "^0.5.1",
+      "truffle": "^5.0.43"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
