@@ -55,7 +55,6 @@ jobs:
           static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v3
-        working-directory: ./client
         with:
           path: |
             .next/cache
