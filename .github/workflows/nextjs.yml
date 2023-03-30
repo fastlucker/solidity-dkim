@@ -30,8 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        working-directory: ./client
         uses: actions/checkout@v3
+        working-directory: ./client
       - name: Detect package manager
         working-directory: ./client
         id: detect-package-manager
@@ -41,14 +41,14 @@ jobs:
           echo "runner=npx --no-install" >> $GITHUB_OUTPUT
           exit 0
       - name: Setup Node
-        working-directory: ./client
         uses: actions/setup-node@v3
+        working-directory: ./client
         with:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
-        working-directory: ./client
         uses: actions/configure-pages@v3
+        working-directory: ./client
         with:
           # Automatically inject basePath in your Next.js configuration file and disable
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
@@ -56,8 +56,8 @@ jobs:
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
       - name: Restore cache
-        working-directory: ./client
         uses: actions/cache@v3
+        working-directory: ./client
         with:
           path: |
             .next/cache
@@ -76,8 +76,8 @@ jobs:
         working-directory: ./client
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
-        working-directory: ./client
         uses: actions/upload-pages-artifact@v1
+        working-directory: ./client
         with:
           path: ./out
 
